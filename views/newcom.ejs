@@ -1,0 +1,10 @@
+<% include partials/head %>
+<body>
+<h1>Додайте новий коментар</h1>
+<% include partials/header %>
+    <form action="/add/com/<%=filmId %>" enctype=multipart/form-data method="post" >
+        Ваш коментар:<br>
+        <p><textarea rows="10" cols="45" maxlength="100" name="comment"></textarea></p> 
+        <input type="submit" value="Submit"> 
+      </form>      
+<% include partials/footer %>

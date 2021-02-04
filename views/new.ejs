@@ -1,0 +1,19 @@
+<% include partials/head %>
+<body>
+<h1>Додайте новий фільм</h1>
+<% include partials/header %>
+    <form action="/new" enctype=multipart/form-data method="post" >
+        Film name:<br>
+        <input type="text" name="name" class='form-control' required><br>      
+        Film genre:<br>
+        <input type="text" name="genre" class='form-control' required><br>   
+        Creation year:<br>
+        <input type="number" name="year" min="1900" max="2019" class='form-control' required><br>   
+        Film duration:<br>
+        <input type="number" name="dur" min="1" max="240" class='form-control' required><br>           
+        Date of realise:<br>
+        <input type="date" name="date" class='form-control' required><br>
+        Avatar file: <input type="file" name="avatar" accept="image/*" required><br>     
+        <input type="submit" value="Submit"> 
+      </form>      
+<% include partials/footer %>

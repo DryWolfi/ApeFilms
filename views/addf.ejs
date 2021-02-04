@@ -1,0 +1,17 @@
+<% include partials/head %>
+<body>
+    <h1>Додати фільм</h1>
+    <% include partials/header %>
+    <table border="1">
+      <tr> 
+          <th>Назва</th>
+      </tr>
+      <% for(let i = 0; i<films.length; i++) {%>
+        <tr>
+          <td><%=films[i].name %><form action="/add/film/<%=films[i].id %><%=Id %>" method="POST" >     
+              Дадати: <input type="submit" value="Add"></form> 
+          </td>
+        </tr>
+        <%} %>
+  </table>
+<% include partials/footer %>

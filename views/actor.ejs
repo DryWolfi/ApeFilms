@@ -1,0 +1,41 @@
+<% include partials/head %>
+<body>
+  <h1><%=actor.name%></h1>
+  <% include partials/header %>
+  <pre><img src="<%=actor.face%>" alt="<%=actor.name%> logo" width="250" height="370" class="leftimg"> </pre>
+  <% if (actor.films.length != 0) { %>
+    <div class="films">
+            <% for(let i = 0; i<actor.films.length; i++) {%> 
+            <% if (user.role == 1) { %>
+              <div class="bu"><form action="/del/film/<%=actor.id %><%=actor.films[i].name %>" method="POST" ><input type="submit" value="Delete"></form></div>
+            <% } %>
+            <div class="img"><img src="<%=actor.films[i].avaUrl %>" alt="<%=actor.films[i].name%>" width="282" height="370"></div>
+            <div class="name"><a href="../films/<%=actor.films[i]._id %>"><%=actor.films[i].name%></a></div>
+            <div class="bot"></div> 
+            <%} %>
+            </div>
+  <% } %>
+  <% if (user.role == 1) { %>
+    <div class="admonlyact"><form action="/actors/<%=actor.id %>" method="POST">Додати фільм:<input type="submit" value="Add"></form>
+    <form action="/del/actor/<%=actor.id %>" method="POST" >  
+      Видалити актора:
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Delete</button>
+      <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Confirm</h4>
+            </div>
+            <div class="modal-body">
+              <p>Ви справді хочете видалити цього актора?</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <input type="submit" value="Delete"> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </form></div>   <%} %>  
+<% include partials/footer %>

@@ -1,0 +1,17 @@
+<% include partials/head %>
+<body>
+    <h1>Додати актора</h1>
+    <% include partials/header %>
+    <table border="1">
+      <tr> 
+          <th>Ім'я</th>
+      </tr>
+      <% for(let i = 0; i<actors.length; i++) {%>
+        <tr>
+          <td><%=actors[i].name %><form action="/add/actor/<%=actors[i].id %><%=Id %>" method="POST" >     
+              Дадати: <input type="submit" value="Add"></form> 
+          </td>
+        </tr>
+        <%} %>
+  </table>
+<% include partials/footer %>

@@ -1,0 +1,23 @@
+<% include partials/head %>
+<body>
+    <h1><%=filmserie.name %></h1>
+    <% include partials/header %>
+    <table border="1">
+      <tr> 
+          <th>Назва</th>
+      </tr>
+      <% for(let i = 0; i<films.length; i++) {%>
+      <tr>
+        <td><img src="<%=films[i].avaUrl %>" alt="<%=films[i].name %> logo" width="75" height="111" class="leftimg">
+          <a href="../films/<%=films[i]._id %>"><%=films[i].name %></a>
+              <form action="/filmserie/<%=films[i]._id %><%=filmserie._id %>" method="POST" >     
+        Видалити фільм: <input type="submit" value="Delete"> 
+      </form> 
+        </td>
+      </tr>
+      <%} %>
+  </table>
+  </form>
+Сторінка №<%=page %>:
+<p><% for(let i = 0; i<pages.length; i++) {%><a href="../filmseries/<%=filmserie.id %>?page=<%=pages[i] %>"><%=pages[i] %>-</a><%} %></p>
+      <% include partials/footer %>

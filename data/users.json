@@ -1,0 +1,32 @@
+{
+    "nextId": 3,
+    "items": [
+        {
+            "id": 0,
+            "login": "DryWolf",
+            "role": 1,
+            "fullname": "Dima Vovchenko",
+            "registeredAt": "2018-09-14 10:33:56",
+            "avaUrl": "../images/users/0.jpg",
+            "isDisabled": false
+        },
+        {
+            "id": 1,
+            "login": "Lyolik",
+            "role": 0,
+            "fullname": "Logan Piers",
+            "registeredAt": "2018-09-15 12:33:56",
+            "avaUrl": "../images/users/1.png",
+            "isDisabled": false
+        },
+        {
+            "id": 2,
+            "login": "Bolik",
+            "role": 0,
+            "fullname": "Dunkan Aidago",
+            "registeredAt": "2018-09-15 13:21:22",
+            "avaUrl": "../images/users/2.png",
+            "isDisabled": false
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+<% include partials/head %>
+<body>
+    <h1>Актори </h1>
+    <% include partials/header %>
+    <table border="1">
+      <tr> 
+          <th>Фото</th>
+          <th>Ім'я</th>
+      </tr>
+      <% for(let i = 0; i<actors.length; i++) {%>
+      <tr>    
+        <td><img src="<%=actors[i].face %>" alt="<%=actors[i].name %> logo" width="75" height="111" class="leftimg"></td>
+        <td><a href="actors/<%=actors[i].id %>"><%=actors[i].name %></a></td>
+      </tr>  
+      <%} %>
+  </table>
+  <% if(actors2.length != 0) {%>
+  <div class="second"><table border="1">
+        <tr> 
+            <th>Фото</th>
+            <th>Ім'я</th>
+        </tr>
+        <% for(let i = 0; i<actors2.length; i++) {%>
+        <tr>    
+          <td><img src="<%=actors2[i].face %>" alt="<%=actors2[i].name %> logo" width="75" height="111" class="leftimg"></td>
+          <td><a href="actors/<%=actors2[i].id %>"><%=actors2[i].name %></a></td>
+        </tr>  
+        <%} %>
+    </table></div>
+    <%} %>
+  <form action="/search/" target="_blank">
+  <input type="search" name="text" required placeholder="Поиск по сайту" style="
+padding: 5px 2px 5px 25px;
+background: url('http://3.bp.blogspot.com/-4w14hQHr5yQ/Tgm6u7KwUkI/AAAAAAAACAI/Hu2poBOPx3g/s25/search.png') no-repeat scroll 0 50%;
+">
+</form>
+Сторінка №<%=page %>:
+    <p><% for(let i = 0; i<pages.length; i++) {%><a href="../films?page=<%=pages[i] %>"><%=pages[i] %>-</a> <%} %>
+<% include partials/footer %>

@@ -1,0 +1,248 @@
+h1 {
+   
+    font-size: 50px;
+    height: 80px;
+    text-align: center;
+    border: 5px solid black;
+    background-color: #CC00FF;
+  }
+
+  body {
+    width: 900px;
+    height: 700px;
+    margin: 0 auto;
+    background: #f6d654 url(../images/back.png) no-repeat;
+    background-size: 100%;
+    background-color: #FF9500;
+    padding: 0 20px 20px 20px;
+    border: 5px solid black;
+    overflow-y: hidden;
+  }
+
+  p {
+      width: 800px;
+      text-align: center;
+  }
+  pre {
+    font-size: 15px;
+    margin: 0 auto;
+    text-align: center;
+    overflow-x: hidden
+ }
+ .err_im {
+  width: 600px;
+  height: 360px;
+  margin: 7px 7px 7px 7px; 
+ }
+
+ .regerr {
+  position: absolute; 
+  color: #EE1818;
+  background-color: #000000;
+  border: 3px #EC0B0B solid;
+  border-radius: 10px;
+  top: 450px;
+  left: 700px; 
+ }
+ .us {
+  position: absolute; 
+  border: 3px #CCCCCC solid;
+  border-radius: 10px;
+  left: 39px;
+  bottom: 720px;
+ }
+ .ad {
+  position: relative; 
+  left: 100px; 
+ }
+ .leftimg {
+    float:left; 
+    margin: 7px 7px 7px 7px; 
+   }
+   .log {
+    list-style-type: none;
+    padding: 0;
+    width: 130px;
+    position: fixed; 
+    top: 70px;
+    left: 20px; 
+    bottom: 0; 
+}
+.log a {
+  text-decoration: none;
+  font-family: sans-serif;
+  color: #5757a0;
+  display: block;
+  padding: 10px 20px;
+  background-color: lavender;
+  border-bottom: 5px solid #5757a0;
+}
+.login {
+  position: absolute; 
+  top: 30px;
+  left: 20px; 
+}
+.adminonly {
+  position: relative; 
+  bottom: 940px;
+}
+.admonlyact {
+  position: relative; 
+  bottom: 480px;
+}
+.second {
+  position: fixed; 
+  top: 93px;
+  left: 700px; 
+}
+.video {
+  position: relative; 
+  bottom: 860px;
+  left: 370px;
+}
+
+.admin {
+  list-style-type: none;
+  padding: 0;
+  width: 130px;
+  position: fixed; 
+  top: 190px;
+  left: 20px; 
+  bottom: 0; 
+}
+.admin a {
+text-decoration: none;
+font-family: sans-serif;
+color: #5757a0;
+display: block;
+padding: 10px 20px;
+background-color: lavender;
+border-bottom: 5px solid #5757a0;
+}
+  .menu {
+    list-style-type: none;
+    padding: 0;
+    position: absolute; 
+    top: 640px;
+    
+}
+  .menu a {
+    text-decoration: none;
+    font-family: sans-serif;
+    color: #5757a0;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: lavender;
+    border-bottom: 5px solid #5757a0;
+  }
+
+  .menu li {
+    display: inline;
+  }
+
+  .comments {
+    overflow-y: auto;
+    position: relative; 
+    left: 875px;
+    bottom: 500px;
+    width: 250px;
+    height: 600px;
+    background-color: white;
+    border: 1px solid #5757a0;
+    overflow-x: hidden;
+  }
+
+  .comments .img{
+    text-decoration: none;
+    }
+    .comments .img img{
+      position: absolute;
+      
+      margin: 0;
+      left: 0px;
+      width: 35px;
+      height: 35px;
+    }
+    .comments .name{
+      border: 1px solid blue;
+      text-align: center;
+      height: 35px;
+      padding: 0;
+      margin: 0;
+      }
+
+    .comments .text{
+      overflow-y: auto;
+      width: 250px;
+      height: 70px;
+      text-align: left;
+      padding: 0;
+      margin: 0;
+      }
+      .comments .bot{
+        border: 3px solid #5757a0;
+        }
+        .comments .bu{
+          position: absolute;
+          right: 30px;
+          width: 50px;
+          height: 5px;
+          }
+          .addwhish {
+            position: relative; 
+            bottom: 270px;
+            left: 370px; 
+        }
+          .settings a {
+            text-decoration: none;
+            font-family: sans-serif;
+            color: #5757a0;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: lavender;
+            border-bottom: 5px solid #5757a0;
+          }
+
+          .films {
+            overflow-y: auto;
+            position: relative; 
+            left: 400px;
+            bottom: 350px;
+            width: 292px;
+            height: 500px;
+            background-color: #F1A008;
+            border: 1px solid #5757a0;
+          }
+        
+          .films .img{
+            text-decoration: none;
+            }
+            .films .bu{
+              position: absolute;
+              right: 30px;
+              width: 50px;
+              height: 5px;
+              }
+
+              .whish {
+                overflow-x: auto;
+                position: relative; 
+                left: 370px;
+                bottom: 200px;
+                width: 300px;
+                height: 400px;
+                background-color: #F1A008;
+                border: 1px solid #5757a0;
+                
+              }
+            
+              .whish .img{
+                text-decoration: none;
+                display: inline-block;
+                }
+                .whish .bu{
+                  position: absolute;
+                  right: 45px;
+                  width: 50px;
+                  height: 5px;
+                  }

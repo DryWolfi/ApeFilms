@@ -1,0 +1,18 @@
+<% include partials/head %>
+<body>
+    <h1>Знайдено <%=results %></h1>
+    <% include partials/header %>
+    Запит - "<%=search %>>"
+    <table border="1">
+      <tr> 
+          <th>Назва</th>
+      </tr>
+      <% for(let i = 0; i<films.length; i++) {%>
+        <tr>
+          <td><img src="<%=films[i].avaUrl %>" alt="<%=films[i].name %> logo" width="75" height="111" class="leftimg">
+            <a href="../films/<%=films[i]._id %>"><%=films[i].name %></a>
+          </td>
+        </tr>
+        <%} %>
+  </table>
+<% include partials/footer %>

@@ -1,0 +1,74 @@
+<% include partials/head %>
+<body>
+  <h1><%=film.name %></h1>
+  <% include partials/header %>
+  <pre><img src="<%=film.avaUrl %>" alt="<%=film.name %> logo" width="250" height="370" class="leftimg"> 
+     Жанр - <%=film.genre %>
+     Рік випуску - <%=film.creationYear %>
+     Дата прем'єри - <%=film.premiere %>
+     Тривалість перегляду(хвилини) - <%=film.duration_min %>
+     Актори -  <% for(let i = 0; i<film.actors.length; i++) {%><a href="../actors/<%=film.actors[i]._id%>"><%=film.actors[i].name%>, </a> <%} %>   
+  </pre>
+  <form action="../comment/<%=film.id %>" method="POST" >Додати коментар: <input type="submit" value="Comment"> </form>
+      <div class="addwhish"><form action="../add/wish/<%=film.id %>" method="POST" >Додати до списку бажаннь: <input type="submit" value="Add"> </form></div>
+      <div class="comments">
+        <% for(let i = 0; i<comments.length; i++) {%> 
+            <% if (user.role == 1 || user.login == comments[i].user.login) { %>
+              <div class="bu"><form action="/del/com/<%=film.id %><%=comments[i].text %>" method="POST" ><input type="submit" value="Delete"></form></div>
+            <% } %>
+          <div class="img"><img src="<%=comments[i].user.avaUrl %>" alt="<%=comments[i].user.login %> logo"></div>
+          <div class="name"><%=comments[i].user.login %></div>
+          <div class="text"><%=comments[i].text %></div>
+          <div class="bot"></div> 
+        <%} %>
+       </div>
+       <div class="video">
+        <video width="400" height="300" controls="controls" poster="video/duel.jpg">
+        <source src="<%=film.videoUrl%>" type='video/mp4'>
+       </video></div>
+       <% if (user.role == 1) { %>
+        <div class="adminonly"><form action="/films/<%=film.id %>" method="POST" >  
+              Видалити фільм:
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Delete</button>
+              <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                <div class="modal-dialog modal-lg" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title">Confirm</h4>
+                    </div>
+                    <div class="modal-body">
+                      <p>Ви справді хочете видалити цей фільм?</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <input type="submit" value="Delete"> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>     
+            <form action="../act/<%=film.id %>" method="POST" >Додати актора: <input type="submit" value="Add"> </form>
+            <form action='/films/video/<%=film.id %>' enctype=multipart/form-data method='POST'>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Додати відео</button>
+              
+              <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                <div class="modal-dialog modal-sm" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title">Confirm</h4>
+                    </div>
+                    <div class="modal-body">
+                      Виберіть відео: <input type="file" name="video" accept="video/*" required><br>     
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <input type="submit" value="Submit"> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form></div>
+            <% } %>
+<% include partials/footer %>

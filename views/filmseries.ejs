@@ -1,0 +1,20 @@
+<% include partials/head %>
+<body>
+    <h1>Серії фільмів</h1>
+    <% include partials/header %>
+    <table border="1">
+      <tr> 
+          <th>Назва</th>
+          <th>Жанр</th>
+          <th>Кількість фільмів</th>
+      </tr>
+      <% for(let i = 0; i<filmseries.length; i++) {%>
+      <tr>
+        <td><a href="filmseries/<%=filmseries[i].id %>?page=1"><%=filmseries[i].name %></a></td>
+        <td><%=filmseries[i].genre %></td>
+        <td><%=filmseries[i].amount %>
+        <form action="filmseries/<%=filmseries[i].id %>" method="POST" >Додати фільм: <input type="submit" value="Add"> </form></td>
+      </tr>
+      <%} %>
+  </table>
+  <% include partials/footer %>

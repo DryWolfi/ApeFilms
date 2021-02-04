@@ -1,0 +1,21 @@
+<% include partials/head %>
+<body>
+<h1>Реєстрація</h1>
+    <form action='/auth/register' enctype=multipart/form-data method='POST'>
+    Username:<br>
+	<input type='text' name='login' class='form-control' required><br>
+	Fullname:<br>
+	<input type='text' name='fullname' class='form-control' required><br>
+	Password:<br>
+	<input type='password' name='pass' class='form-control' pattern='.{5,}' required><br>
+	Repeat password:<br>
+	<input type='password' name='pass2' class='form-control' required><br>
+    Avatar file: <input type="file" name="avatar" accept="image/*" required><br>     
+	<button type='submit' class='btn btn-primary'>Register</button>
+</form>
+<% if (error) { %>
+    <div class="regerr">
+		<%=error %> 
+	  </div>
+  <% } %>   
+<% include partials/footer %>

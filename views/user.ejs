@@ -1,0 +1,76 @@
+<% include partials/head %>
+<body>
+  <h1><%=us.fullname %></h1>
+  <% include partials/header %>
+  <pre><img src="<%=us.avaUrl %>" alt="user<%=us.id %> logo" width="200" height="200" class="leftimg"> Логiн - <%=us.login %>
+        Дата регiстрацiї - <%=user.registeredAt %>
+  </pre>
+  <% if (us.login == user.login) { %>  
+        <form action='/users/ava/<%=us.id %>' enctype=multipart/form-data method='POST'>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Змінити аватар</button>
+      
+      <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Confirm</h4>
+            </div>
+            <div class="modal-body">
+              Виберіть новий аватар: <input type="file" name="avatar" accept="image/*" required><br>     
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <input type="submit" value="Submit"> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <form action='/users/fullname/<%=us.id %>' method='POST'>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Змінити ім'я</button>
+      
+      <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Confirm</h4>
+            </div>
+            <div class="modal-body">
+                Введіть нове ім'я:<br>
+                <input type='text' name='fullname' class='form-control' required><br>       
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <input type="submit" value="Submit"> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    
+  <% } %>   
+  <% if (user.role == 1 && us.login != user.login) { %>
+    <form action="/users/<%=us.id %>" method="POST" >     
+      Видалити користувача: <input type="submit" value="Delete"> 
+    </form>  
+    <form action="/users/admin/<%=us.id %>" method="POST" >     
+      Зробити адміном: <input type="submit" value="Admin"> 
+    </form>  
+  <% } %> 
+  <% if (user.whish.length != 0) { %>
+    <div class="whish">
+            <% for(let i = 0; i<user.whish.length; i++) {%> 
+            <% if (us.login == user.login) { %> 
+              <div class="bu"><form action="/del/wish/<%=user.whish[i].name %>" method="POST" ><input type="submit" value="Delete"></form></div>
+            <%} %>
+            <div class="img"><img src="<%=user.whish[i].avaUrl %>" alt="<%=user.whish[i].name%>" width="282" height="370"></div>
+            <div class="name"><a href="../films/<%=user.whish[i]._id %>"><%=user.whish[i].name%></a></div>
+            <div class="bot"></div> 
+            <%} %>
+            </div>
+  <% } %>  
+<% include partials/footer %>
+

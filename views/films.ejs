@@ -1,0 +1,29 @@
+<% include partials/head %>
+<body>
+    <h1>Фільми</h1>
+    <% include partials/header %>
+    <table border="1">
+      <tr> 
+          <th>Постер</th>
+          <th>Назва</th>
+          <th>Жанр</th>
+          <th>Дата прем'єри</th>
+      </tr>
+      <% for(let i = 0; i<films.length; i++) {%>
+      <tr>
+        <td><img src="<%=films[i].avaUrl %>" alt="<%=films[i].name %> logo" width="45" height="75" class="leftimg"></td>
+        <td><a href="films/<%=films[i].id %>"><%=films[i].name %></a></td>
+        <td><%=films[i].genre %></td>
+        <td><%=films[i].premiere %></td>
+      </tr>
+      <%} %>
+  </table>
+  <form action="/search/" target="_blank">
+  <input type="search" name="text" required placeholder="Поиск по сайту" style="
+padding: 5px 2px 5px 25px;
+background: url('http://3.bp.blogspot.com/-4w14hQHr5yQ/Tgm6u7KwUkI/AAAAAAAACAI/Hu2poBOPx3g/s25/search.png') no-repeat scroll 0 50%;
+">
+</form>
+Сторінка №<%=page %>:
+    <p><% for(let i = 0; i<pages.length; i++) {%><a href="../films?page=<%=pages[i] %>"><%=pages[i] %>-</a> <%} %>
+<% include partials/footer %>

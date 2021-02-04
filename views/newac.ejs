@@ -1,0 +1,11 @@
+<% include partials/head %>
+<body>
+<h1>Додайте нового актора</h1>
+<% include partials/header %>
+    <form action="/new/actor" enctype=multipart/form-data method="post" >
+        Ім'я актора:<br>
+        <input type="text" name="name" class='form-control' required><br>      
+        Фото: <input type="file" name="face" accept="image/*" required><br>     
+        <input type="submit" value="Submit"> 
+      </form>      
+<% include partials/footer %>

@@ -1,0 +1,23 @@
+{
+    "nextId": 3,
+    "items": [
+        {
+            "id": 1,
+            "name": "Гоголь. Жахлива помста",
+            "genre": "Детектив",
+            "creationYear": 2018,
+            "duration_min": 105,
+            "premiere": "2018-08-30",
+            "avaUrl": "../images/films/1.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Гоголь. Вій",
+            "genre": "Детектив",
+            "creationYear": 2018,
+            "duration_min": 94,
+            "premiere": "2018-04-05",
+            "avaUrl": "../images/films/2.jpg"
+        }
+    ]
+}
